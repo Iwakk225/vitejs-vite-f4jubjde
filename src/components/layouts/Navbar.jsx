@@ -6,7 +6,7 @@ export default function Navbar() {
 
     const navLinks = [
         { name: 'Beranda', href: '/' },
-        { name: 'Tentang', href: '#about' },
+        { name: 'Tentang', href: '/tentang' },
         { name: 'Layanan', href: '#services' },
         { name: 'Kontak', href: '#contact' },
     ];
