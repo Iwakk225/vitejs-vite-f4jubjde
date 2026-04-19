@@ -42,7 +42,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section id="faq" className="py-20 px-4 bg-white">
+    <section id="faq" className="select-none py-20 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
 
         {/* Header */}

@@ -1,16 +1,52 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isLandingSection, setIsLandingSection] = useState(false);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     const navLinks = [
-        { name: 'Beranda', href: '/' },
+        { name: 'Beranda', href: '/#' },
         { name: 'Tentang', href: '/about-us' },
-        { name: 'Layanan', href: '#services' },
-        { name: 'Kontak', href: '/#contact' },
+        { name: 'Layanan', href: '/#services' },
+        { name: 'Kontak', href: '/contact' },
     ];
 
+
+    const handleLinkClick = (e, href) => {
+        if (!href.includes('#')) return;
+
+        e.preventDefault();
+
+        const hash = href.split('#')[1];
+        const basePath = href.split('#')[0] || '/';
+
+        const scrollToTarget = () => {
+            if (!hash) {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const el = document.getElementById(hash);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+
+
+        const currentPath = location.pathname === '/' ? '/' : location.pathname;
+
+        if (currentPath === basePath) {
+
+            scrollToTarget();
+        } else {
+
+            navigate(basePath);
+            setTimeout(scrollToTarget, 150);
+        }
+
+        setIsOpen(false);
+    };
 
     useEffect(() => {
         const landingSection = document.getElementById('landing');
@@ -24,12 +60,11 @@ export default function Navbar() {
         return () => observer.disconnect();
     }, []);
 
-
     const isDarkNavbar = !isLandingSection;
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
+            className={`select-none fixed top-0 left-0 w-full z-50 transition-all duration-300
                 ${isDarkNavbar ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'}
             `}
         >
@@ -44,8 +79,8 @@ export default function Navbar() {
                             className="h-8 w-8 rounded-lg transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
                         />
                         <span className={`text-xl font-bold transition-colors duration-300 ${isDarkNavbar
-                                ? 'text-white'
-                                : 'bg-linear-to-r from-gray-200 to-gray-300 bg-clip-text text-transparent'
+                            ? 'text-white'
+                            : 'bg-linear-to-r from-gray-200 to-gray-300 bg-clip-text text-transparent'
                             }`}>
                             Averant Team
                         </span>
@@ -57,9 +92,10 @@ export default function Navbar() {
                             <a
                                 key={link.name}
                                 href={link.href}
+                                onClick={(e) => handleLinkClick(e, link.href)}
                                 className={`font-medium transition-colors duration-300 ${isDarkNavbar
-                                        ? 'text-gray-300 hover:text-white'
-                                        : 'text-gray-300 hover:text-blue-400'
+                                    ? 'text-gray-300 hover:text-white'
+                                    : 'text-gray-300 hover:text-blue-400'
                                     }`}
                             >
                                 {link.name}
@@ -87,11 +123,11 @@ export default function Navbar() {
                         <a
                             key={link.name}
                             href={link.href}
+                            onClick={(e) => handleLinkClick(e, link.href)}
                             className={`block px-3 py-2 rounded-lg font-medium transition-colors ${isDarkNavbar
-                                    ? 'text-gray-300 hover:text-white hover:bg-white/10'
-                                    : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                                ? 'text-gray-300 hover:text-white hover:bg-white/10'
+                                : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
                                 }`}
-                            onClick={() => setIsOpen(false)}
                         >
                             {link.name}
                         </a>

@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <section id="landing" className="pt-28 pb-20 bg-linear-to-br from-[#5B23FF] to-[#362F4F] text-white">
+        <section id="landing" className="select-none pt-28 pb-20 bg-linear-to-br from-[#5B23FF] to-[#362F4F] text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     Solusi Jasa Pembuatan Website Harga <span className="text-yellow-300">Terjangkau</span>
