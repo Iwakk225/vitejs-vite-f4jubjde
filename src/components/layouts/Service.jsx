@@ -148,7 +148,7 @@ export default function Service() {
 
                 <div className="mt-5 flex flex-col items-center gap-4">
                     <a
-                        href="/services"
+                        href="/Services"
                         className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-linear-to-r from-purple-600 to-purple-700 text-white font-semibold text-sm rounded-full shadow-md shadow-purple-200 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:shadow-purple-300 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
                     >
                         <span>Lihat Selengkapnya</span>
