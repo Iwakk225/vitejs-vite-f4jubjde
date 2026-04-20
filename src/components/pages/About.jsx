@@ -1,3 +1,8 @@
+import { 
+  Sparkles, 
+  Search, 
+  Handshake 
+} from "lucide-react";
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import BackToTop from "../features/BackToTop";
@@ -7,6 +12,7 @@ import ButtonParallaxAbout from "../layouts/ButtonParallaxAbout";
 import SEO from "../SEO/SEO";
 
 export default function About3() {
+  const whatsappLink = "https://wa.me/6285174116973?text=Halo%2C%20saya%20ingin%20konsultasi%20tentang%20layanan%20website";
   return (
     <>
       <SEO
@@ -27,10 +33,10 @@ export default function About3() {
                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                   Kami membantu UMKM dan bisnis lokal menghadirkan kehadiran digital melalui website yang fungsional, responsif, dan mudah dikelola.
                 </p>
-                {/* Button */}
-                <div className="mt-5 flex flex-col items-center gap-4">
+                {/* Button - Sekarang di pojok kiri */}
+                <div className="mt-5 flex items-center">
                   <a
-                    href="/contact"
+                    href={whatsappLink}
                     className="group relative inline-flex items-center gap-2 px-8 py-3.5 bg-linear-to-r from-purple-600 to-purple-700 text-white font-semibold text-sm rounded-full shadow-md shadow-purple-200 hover:from-purple-700 hover:to-purple-800 hover:shadow-lg hover:shadow-purple-300 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300"
                   >
                     <span>Hubungi Kami</span>
@@ -68,8 +74,8 @@ export default function About3() {
             <div className="grid md:grid-cols-3 gap-6">
               {/* Quality */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-blue-500 to-[#5B23FF] flex items-center justify-center text-white text-2xl">
-                  ⭐
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-blue-500 to-[#5B23FF] flex items-center justify-center text-white">
+                  <Sparkles className="w-7 h-7" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Kualitas</h3>
                 <p className="text-gray-600 text-sm">
@@ -79,8 +85,8 @@ export default function About3() {
 
               {/* Transparency */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-2xl">
-                  🔍
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white">
+                  <Search className="w-7 h-7" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Transparansi</h3>
                 <p className="text-gray-600 text-sm">
@@ -90,8 +96,8 @@ export default function About3() {
 
               {/* Client Satisfaction */}
               <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm text-center hover:shadow-md transition-shadow">
-                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-2xl">
-                  🤝
+                <div className="w-14 h-14 mx-auto mb-4 rounded-xl bg-linear-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white">
+                  <Handshake className="w-7 h-7" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-2">Kepuasan Klien</h3>
                 <p className="text-gray-600 text-sm">
