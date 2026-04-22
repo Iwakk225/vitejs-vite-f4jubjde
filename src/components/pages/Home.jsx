@@ -8,6 +8,7 @@ import ButtonParallax from "../layouts/ButtonParallax";
 import BackToTop from "../features/BackToTop";
 
 import SEO from "../SEO/SEO";
+import ProcessSection from "../layouts/ProcessSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <ButtonParallax />
       <Service />
+      <ProcessSection/>
       <FAQ />
       <Footer />
       <BackToTop />
