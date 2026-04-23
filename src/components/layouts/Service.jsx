@@ -21,10 +21,10 @@ export default function Service() {
                 </div>
 
                 {/* Cards Grid */}
-                <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+                <div className=" grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
 
                     {/* 🚀 Landing Pages */}
-                    <div className="group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-purple-300 transition-all duration-200 flex flex-col">
+                    <div className="cursor-pointer group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-purple-300 transition-all duration-200 flex flex-col">
                         <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-purple-50 mb-3">
                             <Monitor className="h-5 w-5 text-purple-600" />
                         </div>
@@ -46,7 +46,7 @@ export default function Service() {
                     </div>
 
                     {/* 🏢 Company Profile */}
-                    <div className="group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-blue-300 transition-all duration-200 flex flex-col">
+                    <div className="cursor-pointer group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-blue-300 transition-all duration-200 flex flex-col">
                         <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-blue-50 mb-3">
                             <Building2 className="h-5 w-5 text-blue-600" />
                         </div>
@@ -68,7 +68,7 @@ export default function Service() {
                     </div>
 
                     {/* 🎨 Portofolio Website - Popular */}
-                    <div className="group bg-white rounded-xl border border-purple-300 p-5 hover:shadow-lg transition-all duration-200 relative flex flex-col">
+                    <div className="cursor-pointer group bg-white rounded-xl border border-purple-300 p-5 hover:shadow-lg transition-all duration-200 relative flex flex-col">
                         <span className="absolute top-0 right-0 px-2 py-0.5 bg-purple-600 text-white text-[10px] font-medium rounded-bl-lg rounded-tr-xl">
                             Popular
                         </span>
@@ -93,7 +93,7 @@ export default function Service() {
                     </div>
 
                     {/* ⚙️ Custom Website */}
-                    <div className="group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-amber-300 transition-all duration-200 flex flex-col">
+                    <div className="cursor-pointer group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-amber-300 transition-all duration-200 flex flex-col">
                         <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-amber-50 mb-3">
                             <Palette className="h-5 w-5 text-amber-600" />
                         </div>
@@ -115,7 +115,7 @@ export default function Service() {
                     </div>
 
                     {/* 🤖 Chatbot AI */}
-                    <div className="group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-emerald-300 transition-all duration-200 flex flex-col">
+                    <div className="cursor-pointer group bg-white rounded-xl border border-gray-200 p-5 hover:shadow-lg hover:border-emerald-300 transition-all duration-200 flex flex-col">
                         <div className="w-11 h-11 flex items-center justify-center rounded-lg bg-emerald-50 mb-3">
                             <Bot className="h-5 w-5 text-emerald-600" />
                         </div>

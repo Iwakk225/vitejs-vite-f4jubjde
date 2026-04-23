@@ -61,7 +61,7 @@ export default function Contact() {
         <>
             <Navbar />
 
-            <div className="min-h-screen bg-white text-black py-20 px-4 md:px-8 lg:px-16">
+            <div className="select-none min-h-screen bg-white text-black py-20 px-4 md:px-8 lg:px-16">
                 <div className="max-w-6xl mx-auto">
                     {/* Header */}
                     <div className="text-center mb-20">

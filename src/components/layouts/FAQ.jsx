@@ -56,7 +56,7 @@ export default function FaqSection() {
         </div>
 
         {/* FAQ List */}
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           {faqs.map((faq, index) => (
             <div
               key={index}
@@ -65,7 +65,7 @@ export default function FaqSection() {
               {/* Question */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center p-5 text-left font-semibold text-gray-900 hover:bg-gray-50 transition"
+                className="cursor-pointer w-full flex justify-between items-center p-5 text-left font-semibold text-gray-900 hover:bg-gray-50 transition"
               >
                 <span>{faq.question}</span>
 

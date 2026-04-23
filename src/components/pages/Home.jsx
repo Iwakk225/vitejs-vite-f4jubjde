@@ -5,10 +5,12 @@ import Service from "../layouts/Service";
 import Footer from "../layouts/Footer";
 import FAQ from "../layouts/FAQ";
 import ButtonParallax from "../layouts/ButtonParallax";
+import ProcessSection from "../layouts/ProcessSection";
 
 import BackToTop from "../features/BackToTop";
 
 import SEO from "../SEO/SEO";
+
 
 export default function Home() {
   return (
@@ -22,6 +24,7 @@ export default function Home() {
       <Hero />
       <ButtonParallax />
       <Service />
+      <ProcessSection />
       <FAQ />
       <Footer />
       <BackToTop />
