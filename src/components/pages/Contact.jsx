@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'; 
 import Navbar from "../layouts/Navbar";
 import Footer from "../layouts/Footer";
 import BackToTop from "../features/BackToTop";
@@ -15,7 +16,6 @@ export default function Contact() {
         message: '',
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState('');
 
     const services = [
         'Konsultasi Desain',
@@ -34,7 +34,6 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setSubmitStatus('');
 
         const TEMPLATE_ID = 'template_6pcc8yx';
         const SERVICE_ID = 'service_l8yan5m';
@@ -43,13 +42,32 @@ export default function Contact() {
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
             .then((result) => {
                 console.log('Email sent:', result.text);
-                setSubmitStatus('success');
+                
+                // SweetAlert Success
+                Swal.fire({
+                    title: 'Berhasil!',
+                    text: 'Terima kasih! Pesan Anda telah terkirim. Kami akan menghubungi Anda segera.',
+                    icon: 'success',
+                    confirmButtonColor: '#5B23FF',
+                    confirmButtonText: 'OK',
+                    timer: 3000,
+                    timerProgressBar: true,
+                });
+                
+                // Reset form
                 setFormData({ name: '', email: '', phone: '', service: '', message: '' });
-
                 if (formRef.current) formRef.current.reset();
             }, (error) => {
                 console.error('Failed to send:', error.text);
-                setSubmitStatus('error');
+                
+                // SweetAlert Error
+                Swal.fire({
+                    title: 'Gagal!',
+                    text: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.',
+                    icon: 'error',
+                    confirmButtonColor: '#5B23FF',
+                    confirmButtonText: 'Coba Lagi',
+                });
             })
             .finally(() => {
                 setIsSubmitting(false);
@@ -163,16 +181,6 @@ export default function Contact() {
                                     )}
                                 </button>
                             </form>
-                            {submitStatus === 'success' && (
-                                <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                                    <p className="text-green-800 font-medium">✅ Terima kasih! Pesan Anda telah terkirim. Kami akan menghubungi Anda segera.</p>
-                                </div>
-                            )}
-                            {submitStatus === 'error' && (
-                                <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
-                                    <p className="text-red-800 font-medium">❌ Terjadi kesalahan. Silakan coba lagi.</p>
-                                </div>
-                            )}
                         </div>
 
                         {/* Contact Info Section */}
